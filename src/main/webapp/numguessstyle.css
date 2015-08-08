@@ -52,7 +52,9 @@ h1 {
     background-color: transparent;
     color:black;
     padding-left: .8em;
-;
+}
+#navigation a{
+    color:lightyellow;
 }
 
 #bodycontent {
@@ -72,9 +74,11 @@ h1 {
     background-color: transparent;
     color:black;
     padding-left: .8em;
-;
-}
 
+}
+#postcontent a{
+    color:lightyellow;
+}
 #serverResponse {
     position: absolute;
     top: 210px;
