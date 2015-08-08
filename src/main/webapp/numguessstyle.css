@@ -6,7 +6,7 @@ version 1.0
 */
 
 body {
-    background-color:floralwhite;
+    background-color:lemonchiffon;
     font-family: Verdana, Helvetica, Arial, sans-serif;
     line-height: 125%;
     padding: 0;
@@ -16,7 +16,7 @@ body {
 
 h1 {
     font-size: large;
-    background-color: cornflowerblue;
+    background-color: yellowgreen;
     color: white;
     padding-top: 2em;
     padding-bottom: .2em;
@@ -27,7 +27,7 @@ h1 {
 #tagline p {
     font-style: italic;
     font-family: Georgia, Times, serif;
-    background-color: #bed8f3;
+    background-color: greenyellow;
     border-top: 3px solid #7da5d8;
     border-bottom: 3px solid #7da5d8;
     padding-top: .2em;
@@ -47,7 +47,7 @@ h1 {
     top: 110px;
     width: 110px;
     height: 180px;
-    background-color: navajowhite;
+    background-color: yellow;
     color:black;
     padding-left: .8em;
 ;
@@ -67,7 +67,7 @@ h1 {
     top: 110px;
     width: 120px;
     height:180px;
-    background-color: navajowhite;
+    background-color: yellow;
     color:black;
     padding-left: .8em;
 ;
@@ -80,7 +80,7 @@ h1 {
     left: 140px;
     width: 200px;
     background-color: floralwhite;
-    color: blue;
+    color: green;
     padding-left: .8em;
 
 }
