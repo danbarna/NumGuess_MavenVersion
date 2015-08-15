@@ -35,7 +35,7 @@ FastTrackIT 2015
                  xmlHttp.send();
              }else
              {
-                 alert("Trebuie sa introduceti un numar valid!");
+                 alert("Please enter a valid number!");
              }
          }
 
@@ -52,14 +52,14 @@ FastTrackIT 2015
                  var jSonMessage = JSON.parse(xmlHttp.responseText);
                  var keyRestartGame=jSonMessage.keyRestartGame;
                  if (keyRestartGame != undefined && keyRestartGame.length > 0) {
-                     alert("Restart cu succes, jocul a reinceput!");
+                     alert("The game has restarted!");
                      document.getElementById("number").value="";
                      return;
                  }
 
                  var keyError = jSonMessage.keyError;
                  if (keyError != undefined && keyError.length > 0) {
-                     alert("Trebuie sa introduceti un numar valid!");
+                     alert("Please enter a valid number!");
                      return;
                  }
                  /** @namespace jSonMessage.keySuccess */
@@ -77,7 +77,7 @@ FastTrackIT 2015
                  if(keySuccess=="true")
                  {
                      document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses.";
-                     
+
                  }
 
              }
