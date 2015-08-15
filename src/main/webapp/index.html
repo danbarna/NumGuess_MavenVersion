@@ -27,11 +27,16 @@ FastTrackIT 2015
         }
 
          function guess(){
-             xmlHttp = new XMLHttpRequest();
-             xmlHttp.onreadystatechange=callback;
-             var url ="NumGenServlet"+"?requestGuessNumber="+document.getElementById("number").value;
-             xmlHttp.open("GET",url,true);
-             xmlHttp.send();
+             if(document.getElementById("number").value>0 && document.getElementById("number").value<11) {
+                 xmlHttp = new XMLHttpRequest();
+                 xmlHttp.onreadystatechange = callback;
+                 var url = "NumGenServlet" + "?requestGuessNumber=" + document.getElementById("number").value;
+                 xmlHttp.open("GET", url, true);
+                 xmlHttp.send();
+             }else
+             {
+                 alert("Trebuie sa introduceti un numar valid!");
+             }
          }
 
         function guessLink(givenValue) {
@@ -57,7 +62,8 @@ FastTrackIT 2015
                      alert("Trebuie sa introduceti un numar valid!");
                      return;
                  }
-                var keySuccess = jSonMessage.keySuccess;
+                 /** @namespace jSonMessage.keySuccess */
+                 var keySuccess = jSonMessage.keySuccess;
                  var keyHint = jSonMessage.keyHint;
                  var keyNrGuesses = jSonMessage.keyNrGuesses;
 
@@ -71,7 +77,9 @@ FastTrackIT 2015
                  if(keySuccess=="true")
                  {
                      document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses.";
+                     
                  }
+
              }
          }
 
@@ -85,22 +93,23 @@ FastTrackIT 2015
 
   <div id="header">
       <div id="sitebranding">
-          <h1>FastTrackIT.org</h1>
+          <h1>Lemonade</h1>
       </div>
       <div id="tagline">
-          <p>Welcome to NumGuess</p>
+          <p>Welcome to LemonGuess</p>
       </div>
   </div>
-  <div id="navigation">
-      <a href="javascript:guessLink(1)">It could be 1</a></br>
-      <a href="javascript:guessLink(2)">It could be 2</a></br>
-      <a href="javascript:guessLink(3)">It could be 3</a></br>
-      <a href="javascript:guessLink(4)">It could be 4</a></br>
-      <a href="javascript:guessLink(5)">It could be 5</a></br>
-  </div>
-  <div id="bodycontent">
+
+    <div id="navigation">
+      <a href="javascript:guessLink(1)">It could be 1 lemon</a></br>
+      <a href="javascript:guessLink(2)">It could be 2 lemons</a></br>
+      <a href="javascript:guessLink(3)">It could be 3 lemons</a></br>
+      <a href="javascript:guessLink(4)">It could be 4 lemons</a></br>
+      <a href="javascript:guessLink(5)">It could be 5 lemnos</a></br>
+    </div>
+    <div id="bodycontent">
       <div id="form">
-          <label for="number">Number:&nbsp;</label><input type="number" id="number" style="width:30px"/>
+          <label for="number">Lemons:&nbsp;</label><input type="number" id="number" style="width:30px" min="1" max="10"/>
 
           </br></br>
 
@@ -108,16 +117,17 @@ FastTrackIT 2015
           <input type="button" id="resetButton" value="Reset Game" onClick="reset()"/>
       </div>
 
-  </div>
+    </div>
 
-  <div id="serverResponse"></div>
+    <div id="serverResponse"></div>
 
-  <div id="postcontent">
-      <a href="javascript:guessLink(6)">It could be 6</a></br>
-      <a href="javascript:guessLink(7)">It could be 7</a></br>
-      <a href="javascript:guessLink(8)">It could be 8</a></br>
-      <a href="javascript:guessLink(9)">It could be 9</a></br>
-      <a href="javascript:guessLink(10)">It could be 10</a></br>
-  </div>
+    <div id="postcontent">
+      <a href="javascript:guessLink(6)">It could be 6 lemons</a></br>
+      <a href="javascript:guessLink(7)">It could be 7 lemons</a></br>
+      <a href="javascript:guessLink(8)">It could be 8 lemons</a></br>
+      <a href="javascript:guessLink(9)">It could be 9 lemons</a></br>
+      <a href="javascript:guessLink(10)">It could be 10 lemons</a></br>
+    </div>
+
   </body>
 </html>
