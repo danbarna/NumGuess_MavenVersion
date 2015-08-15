@@ -70,7 +70,7 @@ public class NumGeneratorBusinessLogic {
             successfulGuess = true;
             stopTime=System.currentTimeMillis();
             totalTime=(stopTime-startTime)/1000;
-           // List time=new List();
+            //List time=new List();
            // time.add(totalTime);
             System.out.println("tt:"+totalTime);
         } else if (guessNumber < generatedNumber) {
