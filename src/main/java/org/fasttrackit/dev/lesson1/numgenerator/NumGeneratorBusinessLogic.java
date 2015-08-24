@@ -1,7 +1,9 @@
 package org.fasttrackit.dev.lesson1.numgenerator;
 
+import org.fasttrackit.dev.lesson1.numgenerator.servlet.DataBase;
 import org.fasttrackit.dev.lesson1.numgenerator.servlet.SendMail;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -72,9 +74,17 @@ public class NumGeneratorBusinessLogic {
             successfulGuess = true;
             stopTime=System.currentTimeMillis();
             totalTime=(stopTime-startTime)/1000;
-            System.out.println("tt:"+totalTime);
-            SendMail mail=new SendMail();
-            mail.sendmail(guessNumber,numberOfGuesses,totalTime);
+            System.out.println("tt:" + totalTime);
+            //SendMail mail=new SendMail(guessNumber,numberOfGuesses,totalTime);
+           // mail.sendmail();
+            DataBase input=new DataBase(guessNumber);
+            try {
+                input.demoCreate();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         } else if (guessNumber < generatedNumber) {
             hint = "higher";
             successfulGuess = false;

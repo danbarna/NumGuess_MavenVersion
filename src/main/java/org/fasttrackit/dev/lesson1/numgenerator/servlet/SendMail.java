@@ -56,7 +56,6 @@ public class SendMail implements Runnable{
                         InternetAddress.parse("lemonteamcode@gmail.com"));
                 message.setSubject("Num-guess");
                 message.setText("Congratulation !"+"nr ghicit: "+nr+" ,tentative: "+tentative+" ,timp: "+timp);
-                demoCreate();
                 Transport.send(message);
 
                 System.out.println("done, email sent ok");
@@ -65,30 +64,7 @@ public class SendMail implements Runnable{
                 System.out.println("Email sending problems");
                 e.printStackTrace();
             }}
-    private static void demoCreate() throws ClassNotFoundException, SQLException {
 
-        // 1. load driver
-        Class.forName("org.postgresql.Driver");
-
-        // 2. define connection params to db
-        final String URL = "jdbc:postgresql://54.93.65.5:5432/Dan_Agenda";
-        final String USERNAME = "fasttrackit_dev";
-        final String PASSWORD = "fasttrackit_dev";
-
-        // 3. obtain a connection
-        Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-
-        // 4. create a query statement
-        PreparedStatement pSt = conn.prepareStatement("INSERT INTO \"Numar\" (Number) VALUES (?)");
-        pSt.setString(1, "10");
-
-        // 5. execute a prepared statement
-        int rowsInserted = pSt.executeUpdate();
-
-        // 6. close the objects
-        pSt.close();
-        conn.close();
-    }
 
     /*public static void main(String[] args){
 
